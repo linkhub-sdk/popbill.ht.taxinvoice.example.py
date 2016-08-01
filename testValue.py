@@ -12,7 +12,7 @@ SecretKey = 'SwWxqU+0TErBXy/9TVjIPEnI0VTUMMSQZtJf3Ed8q3I='
 IsTest = True
 
 # 연동회원 사업자번호, 팝빌(www.test.popbill.com)에 연동회원으로 가입한 회원 사업자번호
-testCorpNum = "4108600477"
+testCorpNum = "1234567890"
 
 # 연동회원 아이디, 팝빌(www.test.popbill.com)에 연동회원으로 가입한 회원 아이디
-testUserID = "innoposttest"
+testUserID = "testkorea"
