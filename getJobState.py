@@ -31,7 +31,7 @@ try:
     '''
 
     # 수집요청(requestJob) 호출시 발급받은 작업아이디
-    jobID = "016072917000000012"
+    jobID = "016080110000000007"
 
     response = htTaxinvoiceService.getJobState(testValue.testCorpNum, jobID, testValue.testUserID)
 
