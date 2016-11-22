@@ -10,22 +10,26 @@ import testValue
 
 from popbill import HTTaxinvoiceService,PopbillException
 
-htTaxinvoiceService =  HTTaxinvoiceService(testValue.LinkID,testValue.SecretKey)
+htTaxinvoiceService =  HTTaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 htTaxinvoiceService.IsTest = testValue.IsTest
 
-try:
-    print("=" * 15 + "수집결과 요약정보 조회 " + "=" * 15)
-    '''
-        수집 결과에 대한 요약정보를 반환합니다.
-        count : 결과건수
-        supplyCostTotal : 공급가액 합계
-        taxTotal : 세액 합계
-        amountTotal : 합계 금액
-    '''
+'''
+검색조건을 사용하여 수집 결과 요약정보를 조회합니다.
+- 응답항목에 관한 정보는 "[홈택스 전자(세금)계산서 연계 API 연동매뉴얼]
+  > 3.3.2. Summary (수집 결과 요약정보 조회)" 을 참고하시기 바랍니다.
+'''
 
+try:
+    print("=" * 15 + "수집 결과 요약정보 조회 " + "=" * 15)
+
+    # 팝빌회원 사업자번호
+    CorpNum = testValue.testCorpNum
+
+    # 팝빌회원 아이디
+    UserID = testValue.testUserID
 
     # 수집 요청(requestJob)시 발급받은 작업아이디
-    JobID = "016080110000000007"
+    JobID = "016112210000000003"
 
     # 문서형태 배열, N-일반전자세금계산서, M-수정전자세금계산서
     Type = ["N", "M"]
@@ -45,7 +49,8 @@ try:
     # 종사업장번호, 콤마(",")로 구분하여 구성 Ex) "0001,0007"
     TaxRegID = ""
 
-    response = htTaxinvoiceService.summary(testValue.testCorpNum, JobID, Type, TaxType, PurposeType, TaxRegIDType, TaxRegIDYN, TaxRegID, testValue.testUserID)
+    response = htTaxinvoiceService.summary(CorpNum, JobID, Type, TaxType, PurposeType,
+        TaxRegIDType, TaxRegIDYN, TaxRegID, UserID)
 
     print("count (수집결과 건수) : %s " % response.count)
     print("supplyCostTotal (공급가액 합계) : %s " % response.supplyCostTotal)

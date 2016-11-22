@@ -1,18 +1,31 @@
 # -*- coding: utf-8 -*-
 
-#링크아이디, 링크허브(www.linkhub.co.kr) 파트너가입시 메일로 발급받은 인증정보에 기재되어 있습니다.
+'''
+ 팝빌 홈택스 전자세금계산서 연계 API Python SDK Example
+ - Python SDK 연동환경 설정방법 안내 : http://blog.linkhub.co.kr/581
+ - 업데이트 일자 : 2016-11-21
+ - 연동 기술지원 연락처 : 1600-8536 / 070-4304-2991~2
+ - 연동 기술지원 이메일 : dev@linkhub.co.kr
+ <테스트 연동개발 준비사항>
+ 1) 19, 25번 라인에 선언된 링크아이디(LinkID)와 비밀키(SecretKey)를
+    링크허브 가입시 메일로 발급받은 인증정보를 참조하여 변경합니다.
+ 2) 팝빌 개발용 사이트(test.popbill.com)에 연동회원으로 가입합니다.
+ 3) 홈택스에 등록된 공인인증서를 팝빌에 등록합니다.
+    - 팝빌로그인 > [홈택스연계] > [환경설정] > [공인인증서 관리] 메뉴
+    - 공인인증서 등록(GetCertificatePopUpURL API) 반환된 URL을 이용하여 공인인증서 등록
+'''
+
+# 링크아이디
 LinkID = 'TESTER'
 
-#비밀키, 링크허브(www.linkhub.co.kr) 파트너가입시 메일로 발급받은 인증정보에 기재되어 있습니다.
+# 비밀키
 SecretKey = 'SwWxqU+0TErBXy/9TVjIPEnI0VTUMMSQZtJf3Ed8q3I='
 
-# 연동환경 설정값, True(테스트용), False(상업용)
-# 테스트완료후 링크허브 영업담당자에게 연락을 주셔서 상업용 전환후에
-# IsTest값을 False로 변경하시면 됩니다.
+# 연동환경 설정값, 개발용(True), 상업용(False)
 IsTest = True
 
-# 연동회원 사업자번호, 팝빌(www.test.popbill.com)에 연동회원으로 가입한 회원 사업자번호
+# 팝빌회원 사업자번호
 testCorpNum = "1234567890"
 
-# 연동회원 아이디, 팝빌(www.test.popbill.com)에 연동회원으로 가입한 회원 아이디
+# 팝빌회원 아아디
 testUserID = "testkorea"

@@ -8,18 +8,29 @@ except Exception as E: pass
 
 import testValue
 
-from popbill import HTTaxinvoiceService,PopbillException
+from popbill import HTTaxinvoiceService, PopbillException
 
-htTaxinvoiceService =  HTTaxinvoiceService(testValue.LinkID,testValue.SecretKey)
+htTaxinvoiceService =  HTTaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 htTaxinvoiceService.IsTest = testValue.IsTest
 
+'''
+팝빌 관련 팝업 URL을 반환합니다.
+- 보안정책에 따라 반환된 URL은 30초의 유효시간을 갖습니다.
+'''
+
 try:
-    print("팝빌 URL 확인")
+    print("=" * 15 + " 팝빌 SSO 팝업 URL 확인 " + "=" * 15)
+
+    # 팝빌회원 사업자번호
+    CorpNum = testValue.testCorpNum
+
+    # 팝빌회원 아이디
+    UserID = testValue.testUserID
 
     # LOGIN : 팝빌 로그인 URL, CHRG : 포인트충전 URL
     TOGO = "CHRG"
 
-    url = htTaxinvoiceService.getPopbillURL(testValue.testCorpNum,testValue.testUserID,TOGO)
+    url = htTaxinvoiceService.getPopbillURL(CorpNum, UserID,TOGO)
 
     print("URL : %s" % url)
 

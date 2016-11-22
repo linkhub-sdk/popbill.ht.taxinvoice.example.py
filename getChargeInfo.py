@@ -10,14 +10,25 @@ import testValue
 
 from popbill import HTTaxinvoiceService, PopbillException
 
-htTaxinvoiceService =  HTTaxinvoiceService(testValue.LinkID,testValue.SecretKey)
+htTaxinvoiceService =  HTTaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 htTaxinvoiceService.IsTest = testValue.IsTest
+
+'''
+연동회원의 홈택스 전자세금계산서 연계 API 서비스 과금정보를 확인합니다.
+'''
 
 try:
     print("=" * 15 + " 과금정보 확인 " + "=" * 15)
 
-    response = htTaxinvoiceService.getChargeInfo(testValue.testCorpNum, testValue.testUserID)
-    print(" unitCost (단가) : %s" % response.unitCost)
+    # 팝빌회원 사업자번호
+    CorpNum = testValue.testCorpNum
+
+    # 팝빌회원 아이디
+    UserID = testValue.testUserID
+
+    response = htTaxinvoiceService.getChargeInfo(CorpNum, UserID)
+
+    print(" unitCost (월정액요금) : %s" % response.unitCost)
     print(" chargeMethod (과금유형) : %s" % response.chargeMethod)
     print(" rateSystem (과금제도) : %s" % response.rateSystem)
 

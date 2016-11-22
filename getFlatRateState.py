@@ -10,25 +10,23 @@ import testValue
 
 from popbill import HTTaxinvoiceService, PopbillException
 
-htTaxinvoiceService =  HTTaxinvoiceService(testValue.LinkID,testValue.SecretKey)
+htTaxinvoiceService =  HTTaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 htTaxinvoiceService.IsTest = testValue.IsTest
+
+'''
+연동회원의 정액제 서비스 이용상태를 확인합니다.
+'''
 
 try:
     print("=" * 15 + " 정액제 서비스 상태 확인 " + "=" * 15)
-    '''
-        FlatRateState 구성
-            referenceID     (사업자번호)
-            contractDT      (정액제 서비스 시작일시)
-            useEndDate      (정액제 서비스 종료일)
-            baseDate        (자동연장 결제일)
-            state           (정액제 서비스 상태)
-            closeRequestYN  (정액제 서비스 해지신청 여부)
-            useRestrictYN   (정액제 서비스 사용제한 여부)
-            closeOnExpired  (정액제 서비스 만료 시 해지여부)
-            unPaidYN        (미수금 보유여부)
-    '''
 
-    response = htTaxinvoiceService.getFlatRateState(testValue.testCorpNum, testValue.testUserID)
+    # 팝빌회원 사업자번호
+    CorpNum = testValue.testCorpNum
+
+    # 팝빌회원 아이디
+    UserID = testValue.testUserID
+
+    response = htTaxinvoiceService.getFlatRateState(CorpNum, UserID)
 
     for key, value in response.__dict__.items():
         print("%s : %s" % (key, value))

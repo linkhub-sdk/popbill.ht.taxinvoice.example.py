@@ -8,23 +8,30 @@ except Exception as E: pass
 
 import testValue
 
-from popbill import HTTaxinvoiceService,PopbillException
+from popbill import HTTaxinvoiceService, PopbillException
 
-htTaxinvoiceService =  HTTaxinvoiceService(testValue.LinkID,testValue.SecretKey)
+htTaxinvoiceService =  HTTaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 htTaxinvoiceService.IsTest = testValue.IsTest
 
+'''
+수집된 전자(세금)계산서 1건의 상세정보를 확인합니다.
+- 응답항목에 관한 정보는 "[홈택스 전자(세금)계산서 연계 API 연동매뉴얼]
+  > 4.1.2. GetTaxinvoice 응답전문 구성" 을 참고하시기 바랍니다.
+'''
+
 try:
-    print("=" * 15 + "상세정보 확인" + "=" * 15)
-    '''
-        전자세금계산서 1건에 대한 상세정보를 조회합니다.
-        응답 항목은 "[연동매뉴얼 > 4.1.2 GetTaxinvoice 응답전문 구성]" 을 참조하시면
-        보다 자세한 내용을 확인할 수 있습니다.
-    '''
+    print("=" * 15 + " 세금계산서 상세정보 확인 " + "=" * 15)
+
+    # 팝빌회원 사업자번호
+    CorpNum = testValue.testCorpNum
+
+    # 팝빌회원 아이디
+    UserID = testValue.testUserID
 
     # 전자세금계산서 국세청승인번호
     NTSConfirmNum = "201607274100002900000209"
 
-    taxinvoice = htTaxinvoiceService.getTaxinvoice(testValue.testCorpNum, NTSConfirmNum, testValue.testUserID)
+    taxinvoice = htTaxinvoiceService.getTaxinvoice(CorpNum, NTSConfirmNum, UserID)
 
     for key, value in taxinvoice.__dict__.items():
         if not key.startswith("__"):

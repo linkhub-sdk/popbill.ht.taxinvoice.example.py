@@ -13,33 +13,37 @@ from popbill import HTTaxinvoiceService, PopbillException
 htTaxinvoiceService =  HTTaxinvoiceService(testValue.LinkID,testValue.SecretKey)
 htTaxinvoiceService.IsTest = testValue.IsTest
 
+'''
+전자(세금)계산서 매출/매입 내역 수집을 요청합니다
+- 매출/매입 연계 프로세스는 "[홈택스 전자(세금)계산서 연계 API 연동매뉴얼]
+  > 1.2. 프로세스 흐름도" 를 참고하시기 바랍니다.
+- 수집 요청후 반환받은 작업아이디(JobID)의 유효시간은 1시간 입니다.
+'''
+
 try:
-    '''
-    수집 요청시 발급받은 작업아이디의 유효시간은 1시간 입니다.
-    수집 요청(requestJob) > 작업 상태 확인(getJobState) > 조회(search)
-
-    *** 홈택스 전자세금계산서 조회 프로세스 ***
-    1) 수집 요청
-    2) 작업상태 확인(getJobState) API를 호출하여, 결과코드(errorCode)가 1(수집 성공)인지 확인
-    3) 해당되는 작업아이디를 사용하여 조회(search) API를 호출
-    '''
-
     print("=" * 15 + " 수집 요청 " + "=" * 15)
 
-    # 전자세금계산서 유형, SELL-매출, BUY-매입, TRUSTEE-위수탁
+    # 팝빌회원 사업자번호
+    CorpNum = testValue.testCorpNum
+
+    # 팝빌회원 아이디
+    UserID = testValue.testUserID
+
+    # 전자세금계산서  발행유형, SELL-매출, BUY-매입, TRUSTEE-위수탁
     Type = "SELL"
 
     # 일자유형, W-작성일자, I-발행일자, S-전송일자
     DType = "W"
 
-    # 시작일자, 표시형식(yyyyMMdd)
-    SDate = "20160701"
+    # 시작일자, 날짜형식(yyyyMMdd)
+    SDate = "20161001"
 
-    # 종료일자, 표시형식(yyyyMMdd)
-    EDate = "20160901"
+    # 종료일자, 날짜형식(yyyyMMdd)
+    EDate = "20161131"
 
-    jobID = htTaxinvoiceService.requestJob(testValue.testCorpNum, Type, DType, SDate, EDate, testValue.testUserID)
-    print( "작업아이디(jobID) : " + jobID)
+    jobID = htTaxinvoiceService.requestJob(CorpNum, Type, DType, SDate, EDate, UserID)
+
+    print("작업아이디(jobID) : " + jobID)
 
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code , PE.message))

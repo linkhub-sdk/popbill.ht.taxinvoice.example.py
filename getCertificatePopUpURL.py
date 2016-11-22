@@ -8,19 +8,26 @@ except Exception as E: pass
 
 import testValue
 
-from popbill import HTTaxinvoiceService,PopbillException
+from popbill import HTTaxinvoiceService, PopbillException
 
-htTaxinvoiceService =  HTTaxinvoiceService(testValue.LinkID,testValue.SecretKey)
+htTaxinvoiceService =  HTTaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 htTaxinvoiceService.IsTest = testValue.IsTest
 
+'''
+팝빌에 로그인 하지 않고 홈택스 공인인증서를 등록할 수 있는 팝업 URL을 반환합니다.
+- 보안정책에 의해 응답된 URL은 30초의 만료시간을 갖습니다.
+'''
+
 try:
-    print("=" * 15 + "홈택스 공인인증서 등록 팝업 URL" + "=" * 15)
-    '''
-        팝빌에 로그인 하지 않고 홈택스 공인인증서를 등록할 수 있는 팝업 URL을 반환합니다.
-        * 보안정책에 의해 응답된 URL은 30초의 만료시간을 갖습니다.
-    '''
-    
-    url = htTaxinvoiceService.getCertificatePopUpURL(testValue.testCorpNum,testValue.testUserID)
+    print("=" * 15 + " 홈택스 공인인증서 등록 팝업 URL " + "=" * 15)
+
+    # 팝빌회원 사업자번호
+    CorpNum = testValue.testCorpNum
+
+    # 팝빌회원 아이디
+    UserID = testValue.testUserID
+
+    url = htTaxinvoiceService.getCertificatePopUpURL(CorpNum, UserID)
 
     print("URL : %s" % url)
 

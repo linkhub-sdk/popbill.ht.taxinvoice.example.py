@@ -10,14 +10,26 @@ import testValue
 
 from popbill import HTTaxinvoiceService,PopbillException
 
-htTaxinvoiceService =  HTTaxinvoiceService(testValue.LinkID,testValue.SecretKey)
+htTaxinvoiceService =  HTTaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 htTaxinvoiceService.IsTest = testValue.IsTest
 
+'''
+검색조건을 사용하여 수집결과를 조회합니다.
+- 응답항목에 관한 정보는 "[홈택스 전자(세금)계산서 연계 API 연동매뉴얼]
+  > 3.3.1. Search (수집 결과 조회)" 을 참고하시기 바랍니다.
+'''
+
 try:
-    print("=" * 15 + " 홈택스 매출/매입 조회 " + "=" * 15)
+    print("=" * 15 + " 수집 결과 조회 " + "=" * 15)
+
+    # 팝빌회원 사업자번호
+    CorpNum = testValue.testCorpNum
+
+    # 팝빌회원 아이디
+    UserID = testValue.testUserID
 
     # 수집요청(requestJob)시 발급받은 작업아이디
-    JobID = "016080110000000007"
+    JobID = "016112210000000003"
 
     # 문서형태 배열, N-일반전자세금계산서, M-수정전자세금계산서
     Type = ["N", "M"]
@@ -46,7 +58,8 @@ try:
     # 정렬방향 D-내림차순, A-오름차순
     Order = "D"
 
-    response = htTaxinvoiceService.search(testValue.testCorpNum, JobID, Type, TaxType, PurposeType, TaxRegIDType, TaxRegIDYN, TaxRegID, Page, PerPage, Order, testValue.testUserID)
+    response = htTaxinvoiceService.search(CorpNum, JobID, Type, TaxType, PurposeType,
+        TaxRegIDType, TaxRegIDYN, TaxRegID, Page, PerPage, Order, UserID)
 
     print("code (응답코드) : %s " % response.code)
     print("message (응답메시지) : %s " % response.message)
