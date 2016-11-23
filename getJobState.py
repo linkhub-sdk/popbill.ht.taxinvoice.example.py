@@ -10,7 +10,7 @@ import testValue
 
 from popbill import HTTaxinvoiceService, PopbillException
 
-htTaxinvoiceService =  HTTaxinvoiceService(testValue.LinkID, testValue.SecretKey)
+htTaxinvoiceService = HTTaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 htTaxinvoiceService.IsTest = testValue.IsTest
 
 '''
@@ -29,7 +29,7 @@ try:
     UserID = testValue.testUserID
 
     # 수집요청(requestJob) 호출시 발급받은 작업아이디
-    jobID = "016080110000000007"
+    jobID = "016112315000000001"
 
     response = htTaxinvoiceService.getJobState(CorpNum, jobID, UserID)
 

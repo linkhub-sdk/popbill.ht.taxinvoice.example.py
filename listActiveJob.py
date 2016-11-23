@@ -10,7 +10,7 @@ import testValue
 
 from popbill import HTTaxinvoiceService,PopbillException
 
-htTaxinvoiceService =  HTTaxinvoiceService(testValue.LinkID, testValue.SecretKey)
+htTaxinvoiceService = HTTaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 htTaxinvoiceService.IsTest = testValue.IsTest
 
 '''

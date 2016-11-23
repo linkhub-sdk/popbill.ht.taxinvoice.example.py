@@ -10,7 +10,7 @@ import testValue
 
 from popbill import HTTaxinvoiceService, PopbillException
 
-htTaxinvoiceService =  HTTaxinvoiceService(testValue.LinkID, testValue.SecretKey)
+htTaxinvoiceService = HTTaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 htTaxinvoiceService.IsTest = testValue.IsTest
 
 '''
@@ -29,7 +29,7 @@ try:
     UserID = testValue.testUserID
 
     # 전자세금계산서 국세청승인번호
-    NTSConfirmNum = "201607274100002900000209"
+    NTSConfirmNum = "20161121410002030000079e"
 
     taxinvoice = htTaxinvoiceService.getTaxinvoice(CorpNum, NTSConfirmNum, UserID)
 
