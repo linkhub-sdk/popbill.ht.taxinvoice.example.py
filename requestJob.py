@@ -15,8 +15,8 @@ htTaxinvoiceService.IsTest = testValue.IsTest
 
 '''
 전자(세금)계산서 매출/매입 내역 수집을 요청합니다
-- 매출/매입 연계 프로세스는 "[홈택스 전자(세금)계산서 연계 API 연동매뉴얼]
-  > 1.2. 프로세스 흐름도" 를 참고하시기 바랍니다.
+- 매출/매입 연계 프로세스는 "[홈택스연동(전자세금계산서) API 연동매뉴얼]
+  > 1.1. 홈택스연동(전자세금계산서) API 구성" 을 참고하시기 바랍니다.
 - 수집 요청후 반환받은 작업아이디(JobID)의 유효시간은 1시간 입니다.
 '''
 
@@ -36,10 +36,10 @@ try:
     DType = "W"
 
     # 시작일자, 날짜형식(yyyyMMdd)
-    SDate = "20161001"
+    SDate = "20190101"
 
     # 종료일자, 날짜형식(yyyyMMdd)
-    EDate = "20161131"
+    EDate = "20190118"
 
     jobID = htTaxinvoiceService.requestJob(CorpNum, Type, DType, SDate, EDate, UserID)
 
