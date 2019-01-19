@@ -17,7 +17,7 @@ htTaxinvoiceService = HTTaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 htTaxinvoiceService.IsTest = testValue.IsTest
 
 '''
-연동회원의 홈택스 전자세금계산서 연계 API 서비스 과금정보를 확인합니다.
+연동회원의 홈택스 전자세금계산서 API 연동서비스 과금정보를 확인합니다.
 '''
 
 try:
