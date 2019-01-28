@@ -34,7 +34,6 @@ try:
 
     response = htTaxinvoiceService.listActiveJob(CorpNum, UserID)
 
-    i = 1
     listLength = str(len(response))
 
     for info in response:
@@ -49,7 +48,6 @@ try:
         print("jobEndDT (작업 종료일시) : %s" % info.jobEndDT)
         print("collectCount (수집개수) : %s" % info.collectCount)
         print("regDT (수집 요청일시) : %s" % info.regDT) + '\n'
-    i += 1
 
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code, PE.message))
