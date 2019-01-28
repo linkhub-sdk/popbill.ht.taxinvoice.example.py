@@ -26,10 +26,10 @@ try:
     print("=" * 15 + " 수집 상태 확인 " + "=" * 15)
 
     # 팝빌회원 사업자번호
-    CorpNum = "6798700433"
+    CorpNum = testValue.testCorpNum
 
     # 팝빌회원 아이디
-    UserID = "testkorea_linkhub"
+    UserID = testValue.testUserID
 
     # 수집요청(requestJob) 호출시 발급받은 작업아이디
     jobID = "019012817000000001"
