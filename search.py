@@ -2,15 +2,18 @@
 # code for console Encoding difference. Dont' mind on it
 import sys
 import imp
+
 imp.reload(sys)
-try: sys.setdefaultencoding('UTF8')
-except Exception as E: pass
+try:
+    sys.setdefaultencoding('UTF8')
+except Exception as E:
+    pass
 
 import testValue
 
-from popbill import HTTaxinvoiceService,PopbillException
+from popbill import HTTaxinvoiceService, PopbillException
 
-htTaxinvoiceService =  HTTaxinvoiceService(testValue.LinkID, testValue.SecretKey)
+htTaxinvoiceService = HTTaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 htTaxinvoiceService.IsTest = testValue.IsTest
 
 '''
@@ -29,7 +32,7 @@ try:
     UserID = testValue.testUserID
 
     # 수집요청(requestJob)시 발급받은 작업아이디
-    JobID = "019011817000000001"
+    JobID = "019012817000000001"
 
     # 문서형태 배열, N-일반전자세금계산서, M-수정전자세금계산서
     Type = ["N", "M"]
@@ -40,7 +43,7 @@ try:
     # 영수/청구, R-영수, C-청구, N-없음
     PurposeType = ["R", "C", "N"]
 
-    # 종사업자번호 사업자 유형, S-꽁급자, B-공급받는자, T-수탁자
+    # 종사업자번호 사업자 유형, S-공급자, B-공급받는자, T-수탁자
     TaxRegIDType = "S"
 
     # 종사업장번호 유무, 공백-전체조회, 0-종사업장번호 없음, 1-종사업장번호 있음
@@ -59,7 +62,7 @@ try:
     Order = "D"
 
     response = htTaxinvoiceService.search(CorpNum, JobID, Type, TaxType, PurposeType,
-        TaxRegIDType, TaxRegIDYN, TaxRegID, Page, PerPage, Order, UserID)
+                                          TaxRegIDType, TaxRegIDYN, TaxRegID, Page, PerPage, Order, UserID)
 
     print("code (응답코드) : %s " % response.code)
     print("message (응답메시지) : %s " % response.message)
@@ -68,14 +71,43 @@ try:
     print("pageNum (페에지 번호) : %s " % response.pageNum)
     print("pageCount (페이지 개수) : %s \n" % response.pageCount)
 
-    i = 1
-    for info in response.list :
-        print("====== 세금계산서 정보 [%d] ======"% i)
-        for key, value in info.__dict__.items():
-            print("%s : %s" % (key, value))
-        i += 1
-        print("")
-
-
+    for info in response.list:
+        print("ntsconfirmNum (국세청승인번호) : %s" % info.ntsconfirmNum)
+        print("writeDate (작성일자) : %s" % info.writeDate)
+        print("issueDate (발행일자) : %s" % info.issueDate)
+        print("sendDate (전송일자) : %s" % info.sendDate)
+        print("taxType (과세형태) : %s" % info.taxType)
+        print("purposeType (영수/청구) : %s" % info.purposeType)
+        print("supplyCostTotal (공급가액 합계) : %s" % info.supplyCostTotal)
+        print("taxTotal (세액 합계) : %s" % info.totalAmount)
+        print("totalAmount (합계금액) : %s" % info.totalAmount)
+        print("remark1 (비고) : %s" % info.remark1)
+        print("invoiceType (매입/매출) : %s" % info.invoiceType)
+        print("modifyYN (수정 전자세금계산서 여부) : %s" % info.modifyYN)
+        print("orgNTSConfirmNum (원본 전자세금계산서 국세청승인번호) : %s" % info.orgNTSConfirmNum)
+        print("purchaseDate (거래일자) : %s" % info.purchaseDate)
+        print("itemName (품명) : %s" % info.itemName)
+        print("spec (규격) : %s" % info.spec)
+        print("qty (수량) : %s" % info.qty)
+        print("unitCost (단가) : %s" % info.unitCost)
+        print("supplyCost (공급가액) : %s" % info.supplyCost)
+        print("tax (세액) : %s" % info.tax)
+        print("remark (비고) : %s" % info.remark)
+        print("invoicerCorpNum (공급자 사업자번호) : %s" % info.invoicerCorpNum)
+        print("invoicerTaxRegID (공급자 종사업장번호) : %s" % info.invoicerTaxRegID)
+        print("invoicerCorpName (공급자 상호) : %s" % info.invoicerCorpName)
+        print("invoicerCEOName (공급자 대표자 성명) : %s" % info.invoicerCEOName)
+        print("invoicerEmail (공급자 담당자 이메일) : %s" % info.invoicerEmail)
+        print("invoiceeCorpNum (공급받는자 사업자번호) : %s" % info.invoiceeCorpNum)
+        print("invoiceeType (공급받는자 구분) : %s" % info.invoiceeType)
+        print("invoiceeTaxRegID (공급받는자 종사업장번호) : %s" % info.invoiceeTaxRegID)
+        print("invoiceeCorpName (공급받는자 상호) : %s" % info.invoiceeCorpName)
+        print("invoiceeCEOName (공급받는자 대표자 성명) : %s" % info.invoiceeCEOName)
+        print("invoiceeEmail1 (공급받는자 담당자 이메일) : %s" % info.invoiceeEmail1)
+        print("trusteeCorpNum (수탁자 사업자번호) : %s" % info.trusteeCorpNum)
+        print("trusteeTaxRegID (수탁자 종사업장번호) : %s" % info.trusteeTaxRegID)
+        print("trusteeCorpName (수탁자 상호) : %s" % info.trusteeCorpName)
+        print("trusteeCEOName (수탁자 대표자 성명) : %s" % info.trusteeCEOName)
+        print("trusteeEmail (수탁자 담당자 이메일) : %s" % info.trusteeEmail) + '\n'
 except PopbillException as PE:
-    print("Exception Occur : [%d] %s" % (PE.code , PE.message))
+    print("Exception Occur : [%d] %s" % (PE.code, PE.message))

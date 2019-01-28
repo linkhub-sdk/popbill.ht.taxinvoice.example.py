@@ -2,13 +2,16 @@
 # code for console Encoding difference. Dont' mind on it
 import sys
 import imp
+
 imp.reload(sys)
-try: sys.setdefaultencoding('UTF8')
-except Exception as E: pass
+try:
+    sys.setdefaultencoding('UTF8')
+except Exception as E:
+    pass
 
 import testValue
 
-from popbill import HTTaxinvoiceService,PopbillException
+from popbill import HTTaxinvoiceService, PopbillException
 
 htTaxinvoiceService = HTTaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 htTaxinvoiceService.IsTest = testValue.IsTest
@@ -34,12 +37,19 @@ try:
     i = 1
     listLength = str(len(response))
 
-    for info in response :
-        print("수집상태 정보 [" + str(i) + "/" + listLength + "]")
-        for key, value in info.__dict__.items():
-            print("%s : %s" % (key, value))
-        print
-        i += 1
+    for info in response:
+        print("jobState (수집상태) : %s" % info.jobState)
+        print("queryType (수집유형) : %s" % info.queryType)
+        print("queryDateType (일자유형) : %s" % info.queryDateType)
+        print("queryStDate (시작일자) : %s" % info.queryStDate)
+        print("queryEnDate (종료일자) : %s" % info.queryEnDate)
+        print("errorCode (오류코드) : %s" % info.errorCode)
+        print("errorReason (오류메시지) : %s" % info.errorReason)
+        print("jobStartDT (작업 시작일시) : %s" % info.jobStartDT)
+        print("jobEndDT (작업 종료일시) : %s" % info.jobEndDT)
+        print("collectCount (수집개수) : %s" % info.collectCount)
+        print("regDT (수집 요청일시) : %s" % info.regDT) + '\n'
+    i += 1
 
 except PopbillException as PE:
-    print("Exception Occur : [%d] %s" % (PE.code , PE.message))
+    print("Exception Occur : [%d] %s" % (PE.code, PE.message))

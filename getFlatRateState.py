@@ -31,8 +31,15 @@ try:
 
     response = htTaxinvoiceService.getFlatRateState(CorpNum, UserID)
 
-    for key, value in response.__dict__.items():
-        print("%s : %s" % (key, value))
+    print("referenceID (사업자번호) : %s" % response.referenceID)
+    print("contractDT (정액제 서비스 시작일시) : %s" % response.contractDT)
+    print("useEndDate (정액제 서비스 종료일자) : %s" % response.useEndDate)
+    print("baseDate (자동연장 결제일) : %s" % response.baseDate)
+    print("state (정액제 서비스 상태 [1-사용, 2-해지]) : %s" % response.state)
+    print("closeRequestYN (정액제 서비스 해지신청 여부) : %s" % response.closeRequestYN)
+    print("useRestrictYN (정액세 서비스 사용제한 여부) : %s" % response.useRestrictYN)
+    print("closeOnExpired (정액제 서비스 만료 시 해지 여부) : %s" % response.closeOnExpired)
+    print("unPaidYN (미수금 보유 여부): %s" % response.unPaidYN)
 
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code, PE.message))
