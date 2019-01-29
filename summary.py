@@ -32,7 +32,7 @@ try:
     UserID = testValue.testUserID
 
     # 수집 요청(requestJob)시 발급받은 작업아이디
-    JobID = "019011817000000001"
+    JobID = "019012911000000012"
 
     # 문서형태 배열, N-일반전자세금계산서, M-수정전자세금계산서
     Type = ["N", "M"]
@@ -46,7 +46,7 @@ try:
     # 종사업장번호 사업자유형, S-공급자, B-공급받는자, T-수탁자
     TaxRegIDType = "S"
 
-    # 종사업장번호 유무,,공백 - 전체조회, 0- 종사업장번호 없음, 1-종사업장번호 있음
+    # 종사업장번호 유무,,공백-전체조회, 0-종사업장번호 없음, 1-종사업장번호 있음
     TaxRegIDYN = ""
 
     # 종사업장번호, 콤마(",")로 구분하여 구성 Ex) "0001,0007"
@@ -55,7 +55,7 @@ try:
     response = htTaxinvoiceService.summary(CorpNum, JobID, Type, TaxType, PurposeType,
                                            TaxRegIDType, TaxRegIDYN, TaxRegID, UserID)
 
-    print("count (수집결과 건수) : %s " % response.count)
+    print("count (수집 결과 건수) : %s " % response.count)
     print("supplyCostTotal (공급가액 합계) : %s " % response.supplyCostTotal)
     print("taxTotal (세액 합계) : %s " % response.taxTotal)
     print("amountTotal (합계 금액) : %s " % response.amountTotal)

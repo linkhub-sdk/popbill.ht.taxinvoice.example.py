@@ -36,6 +36,7 @@ try:
 
     taxinvoice = htTaxinvoiceService.getTaxinvoice(CorpNum, NTSConfirmNum, UserID)
 
+    print("\n전자세금계산서 정보>")
     print("writeDate (작성일자) : %s" % taxinvoice.writeDate)
     print("issueDT (발행일시) : %s" % taxinvoice.issueDT)
     print("invoiceType (전자세금계산서 종류) : %s" % taxinvoice.invoiceType)
@@ -44,7 +45,7 @@ try:
     print("supplyCostTotal (공급가액 합계) : %s" % taxinvoice.supplyCostTotal)
     print("totalAmount (합계금액) : %s" % taxinvoice.totalAmount)
     print("purposeType (영수/청구) : %s" % taxinvoice.purposeType)
-    print("seriaNum (일련번호) : %s" % taxinvoice.seriaNum)
+    print("serialNum (일련번호) : %s" % taxinvoice.serialNum)
     print("cash (현금) : %s" % taxinvoice.cash)
     print("chkBill (수표) : %s" % taxinvoice.chkBill)
     print("credit (외상) : %s" % taxinvoice.credit)
@@ -53,8 +54,12 @@ try:
     print("remark2 (비고2): %s" % taxinvoice.remark2)
     print("remark3 (비고3): %s" % taxinvoice.remark3)
     print("ntsconfirmNum (국세청승인번호) : %s" % taxinvoice.ntsconfirmNum)
+
+    print("\n수정 전자세금계산서 정보>")
     print("modifyCode (수정사유코드) : %s" % taxinvoice.modifyCode)
     print("orgNTSConfirmNum (원본 전자세금계산서 국세청승인번호) : %s" % taxinvoice.orgNTSConfirmNum)
+
+    print("\n공급자 정보>")
     print("invoicerCorpNum (공급자 사업자번호) : %s" % taxinvoice.invoicerCorpNum)
     print("invoicerMgtKey (공급자 문서관리번호) : %s" % taxinvoice.invoicerMgtKey)
     print("invoicerTaxRegID (공급자 종사업장번호) : %s" % taxinvoice.invoicerTaxRegID)
@@ -67,6 +72,8 @@ try:
     print("invoicerTEL (공급자 담당자 연락처) : %s" % taxinvoice.invoicerTEL)
     print("invoicerHP (공급자 담당자 휴대폰) : %s" % taxinvoice.invoicerHP)
     print("invoicerEmail (공급자 담당자 메일) : %s" % taxinvoice.invoicerEmail)
+
+    print("\n공급받는자 정보>")
     print("invoiceeCorpNum (공급받는자 사업자번호) : %s" % taxinvoice.invoiceeCorpNum)
     print("invoiceeType (공급받는자 구분) : %s" % taxinvoice.invoiceeType)
     print("invoiceeMgtKey (공급받는자 문서관리번호) : %s" % taxinvoice.invoiceeMgtKey)
@@ -80,6 +87,8 @@ try:
     print("invoiceeDeptName1 (공급받는자 부서명) : %s" % taxinvoice.invoiceeDeptName1)
     print("invoiceeTEL1 (공급받는자 담당자 연락처) : %s" % taxinvoice.invoiceeTEL1)
     print("invoiceeEmail1 (공급받는자 담당자 이메일) : %s" % taxinvoice.invoiceeEmail1)
+
+    print("\n수탁자 정보>")
     print("trusteeCorpNum (수탁자 사업자번호) : %s" % taxinvoice.trusteeCorpNum)
     print("trusteeMgtKey (수탁자 문서관리번호) : %s" % taxinvoice.trusteeMgtKey)
     print("trusteeTaxRegID (수탁자 종사업장번호) : %s" % taxinvoice.trusteeTaxRegID)
@@ -91,7 +100,7 @@ try:
     print("trusteeContactName (수탁자 담당자명) : %s" % taxinvoice.trusteeContactName)
     print("trusteeTEL (수탁자 담당자 연락처) : %s" % taxinvoice.trusteeTEL)
     print("trusteeHP (수탁자 담당자 휴대폰) : %s" % taxinvoice.trusteeHP)
-    print("trusteeEmail (수탁자 담당자 메일) : %s" % taxinvoice.trusteeEmail)
+    print("trusteeEmail (수탁자 담당자 메일) : %s" % taxinvoice.trusteeEmail) + '\n'
 
     print("=" * 15 + "상세항목(품목) 정보" + "=" * 15)
     if taxinvoice.detailList is not None:

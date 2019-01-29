@@ -32,13 +32,14 @@ try:
     UserID = testValue.testUserID
 
     # 수집요청(requestJob) 호출시 발급받은 작업아이디
-    jobID = "019012817000000001"
+    jobID = "019012912000000003"
 
     response = htTaxinvoiceService.getJobState(CorpNum, jobID, UserID)
 
+    print("jobID (작업아이디) : %s" % response.jobID)
     print("jobState (수집상태) : %s" % response.jobState)
     print("queryType (수집유형) : %s" % response.queryType)
-    print("queryDateType (일자유형) : %s" % response.queryDateType)
+    print("queryDateType (수집 일자유형) : %s" % response.queryDateType)
     print("queryStDate (시작일자) : %s" % response.queryStDate)
     print("queryEnDate (종료일자) : %s" % response.queryEnDate)
     print("errorCode (오류코드) : %s" % response.errorCode)

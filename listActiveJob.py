@@ -37,6 +37,7 @@ try:
     listLength = str(len(response))
 
     for info in response:
+        print("jobID (작업아이디) : %s" % info.jobID)
         print("jobState (수집상태) : %s" % info.jobState)
         print("queryType (수집유형) : %s" % info.queryType)
         print("queryDateType (일자유형) : %s" % info.queryDateType)

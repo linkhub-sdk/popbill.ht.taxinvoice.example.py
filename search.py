@@ -32,7 +32,7 @@ try:
     UserID = testValue.testUserID
 
     # 수집요청(requestJob)시 발급받은 작업아이디
-    JobID = "019012817000000001"
+    JobID = "019012911000000011"
 
     # 문서형태 배열, N-일반전자세금계산서, M-수정전자세금계산서
     Type = ["N", "M"]
@@ -72,6 +72,7 @@ try:
     print("pageCount (페이지 개수) : %s \n" % response.pageCount)
 
     for info in response.list:
+        print("\n==============전자세금계산서 정보>==============")
         print("ntsconfirmNum (국세청승인번호) : %s" % info.ntsconfirmNum)
         print("writeDate (작성일자) : %s" % info.writeDate)
         print("issueDate (발행일자) : %s" % info.issueDate)
@@ -79,12 +80,16 @@ try:
         print("taxType (과세형태) : %s" % info.taxType)
         print("purposeType (영수/청구) : %s" % info.purposeType)
         print("supplyCostTotal (공급가액 합계) : %s" % info.supplyCostTotal)
-        print("taxTotal (세액 합계) : %s" % info.totalAmount)
+        print("taxTotal (세액 합계) : %s" % info.taxTotal)
         print("totalAmount (합계금액) : %s" % info.totalAmount)
         print("remark1 (비고) : %s" % info.remark1)
         print("invoiceType (매입/매출) : %s" % info.invoiceType)
+
+        print("\n수정 전자세금계산서 정보>")
         print("modifyYN (수정 전자세금계산서 여부) : %s" % info.modifyYN)
         print("orgNTSConfirmNum (원본 전자세금계산서 국세청승인번호) : %s" % info.orgNTSConfirmNum)
+
+        print("\n전자세금계산서 품목 정보 (1개만 반환)>")
         print("purchaseDate (거래일자) : %s" % info.purchaseDate)
         print("itemName (품명) : %s" % info.itemName)
         print("spec (규격) : %s" % info.spec)
@@ -93,17 +98,24 @@ try:
         print("supplyCost (공급가액) : %s" % info.supplyCost)
         print("tax (세액) : %s" % info.tax)
         print("remark (비고) : %s" % info.remark)
+
+        print("\n공급자 정보>")
         print("invoicerCorpNum (공급자 사업자번호) : %s" % info.invoicerCorpNum)
         print("invoicerTaxRegID (공급자 종사업장번호) : %s" % info.invoicerTaxRegID)
         print("invoicerCorpName (공급자 상호) : %s" % info.invoicerCorpName)
         print("invoicerCEOName (공급자 대표자 성명) : %s" % info.invoicerCEOName)
         print("invoicerEmail (공급자 담당자 이메일) : %s" % info.invoicerEmail)
+
+        print("\n공급받는자 정보>")
         print("invoiceeCorpNum (공급받는자 사업자번호) : %s" % info.invoiceeCorpNum)
         print("invoiceeType (공급받는자 구분) : %s" % info.invoiceeType)
         print("invoiceeTaxRegID (공급받는자 종사업장번호) : %s" % info.invoiceeTaxRegID)
         print("invoiceeCorpName (공급받는자 상호) : %s" % info.invoiceeCorpName)
         print("invoiceeCEOName (공급받는자 대표자 성명) : %s" % info.invoiceeCEOName)
         print("invoiceeEmail1 (공급받는자 담당자 이메일) : %s" % info.invoiceeEmail1)
+        print("invoiceeEmail2 (ASP 연계사업자 메일) : %s" % info.invoiceeEmail2)
+
+        print("\n수탁자 정보>")
         print("trusteeCorpNum (수탁자 사업자번호) : %s" % info.trusteeCorpNum)
         print("trusteeTaxRegID (수탁자 종사업장번호) : %s" % info.trusteeTaxRegID)
         print("trusteeCorpName (수탁자 상호) : %s" % info.trusteeCorpName)

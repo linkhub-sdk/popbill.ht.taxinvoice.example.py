@@ -33,8 +33,8 @@ try:
 
     response = htTaxinvoiceService.getXML(CorpNum, NTSConfirmNum, UserID)
 
-    print("ResultCode (응답코드) : %s " % response.ResultCode)
-    print("Message (국세청승인번호) : %s " % response.Message)
+    print("ResultCode (요청에 대한 응답 상태코드) : %s " % response.ResultCode)
+    print("Message (전자세금계산서 국세청승인번호) : %s " % response.Message)
     print("retObject (전자세금계산서 XML문서) : %s " % response.retObject)
 
 except PopbillException as PE:
