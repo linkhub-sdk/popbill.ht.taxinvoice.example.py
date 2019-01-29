@@ -2,15 +2,18 @@
 # code for console Encoding difference. Dont' mind on it
 import sys
 import imp
+
 imp.reload(sys)
-try: sys.setdefaultencoding('UTF8')
-except Exception as E: pass
+try:
+    sys.setdefaultencoding('UTF8')
+except Exception as E:
+    pass
 
 import testValue
 
-from popbill import HTTaxinvoiceService,PopbillException
+from popbill import HTTaxinvoiceService, PopbillException
 
-htTaxinvoiceService =  HTTaxinvoiceService(testValue.LinkID, testValue.SecretKey)
+htTaxinvoiceService = HTTaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 htTaxinvoiceService.IsTest = testValue.IsTest
 
 '''
@@ -50,7 +53,7 @@ try:
     TaxRegID = ""
 
     response = htTaxinvoiceService.summary(CorpNum, JobID, Type, TaxType, PurposeType,
-        TaxRegIDType, TaxRegIDYN, TaxRegID, UserID)
+                                           TaxRegIDType, TaxRegIDYN, TaxRegID, UserID)
 
     print("count (수집결과 건수) : %s " % response.count)
     print("supplyCostTotal (공급가액 합계) : %s " % response.supplyCostTotal)
@@ -58,4 +61,4 @@ try:
     print("amountTotal (합계 금액) : %s " % response.amountTotal)
 
 except PopbillException as PE:
-    print("Exception Occur : [%d] %s" % (PE.code , PE.message))
+    print("Exception Occur : [%d] %s" % (PE.code, PE.message))
