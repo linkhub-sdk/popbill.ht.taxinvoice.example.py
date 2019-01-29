@@ -113,6 +113,7 @@ try:
             print("unitCost (단가) : %s" % detailList.unitCost)
             print("supplyCost (공급가액) : %s" % detailList.supplyCost)
             print("tax (세액) : %s" % detailList.tax)
+            print("remark (비고) : %s" % detailList.remark)
 
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code, PE.message))
