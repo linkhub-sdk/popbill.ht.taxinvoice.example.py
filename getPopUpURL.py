@@ -15,6 +15,7 @@ from popbill import HTTaxinvoiceService, PopbillException
 
 htTaxinvoiceService = HTTaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 htTaxinvoiceService.IsTest = testValue.IsTest
+htTaxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 홈택스 전자세금계산서 보기 팝업 URL을 반환합니다.

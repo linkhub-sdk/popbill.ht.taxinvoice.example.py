@@ -15,6 +15,7 @@ from popbill import HTTaxinvoiceService, PopbillException
 
 htTaxinvoiceService = HTTaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 htTaxinvoiceService.IsTest = testValue.IsTest
+htTaxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 팝빌에 등록되어 있는 홈택스 공인인증서의 만료일시를 확인합니다.
