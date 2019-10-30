@@ -33,7 +33,7 @@ try:
     UserID = testValue.testUserID
 
     # 수집 요청(requestJob)시 발급받은 작업아이디
-    JobID = "019012911000000012"
+    JobID = "019103014000000001"
 
     # 문서형태 배열, N-일반전자세금계산서, M-수정전자세금계산서
     Type = ["N", "M"]
@@ -53,8 +53,11 @@ try:
     # 종사업장번호, 콤마(",")로 구분하여 구성 Ex) "0001,0007"
     TaxRegID = ""
 
+    # 조회 검색어, 거래처 사업자번호 또는 거래처명 like 검색
+    SearchString = ""
+
     response = htTaxinvoiceService.summary(CorpNum, JobID, Type, TaxType, PurposeType,
-                                           TaxRegIDType, TaxRegIDYN, TaxRegID, UserID)
+                                           TaxRegIDType, TaxRegIDYN, TaxRegID, UserID, SearchString)
 
     print("count (수집 결과 건수) : %s " % response.count)
     print("supplyCostTotal (공급가액 합계) : %s " % response.supplyCostTotal)

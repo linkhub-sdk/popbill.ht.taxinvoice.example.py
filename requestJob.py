@@ -34,13 +34,13 @@ try:
     Type = "SELL"
 
     # 일자유형, W-작성일자, I-발행일자, S-전송일자
-    DType = "W"
+    DType = "S"
 
     # 시작일자, 날짜형식(yyyyMMdd)
-    SDate = "20190101"
+    SDate = "20190901"
 
     # 종료일자, 날짜형식(yyyyMMdd)
-    EDate = "20190118"
+    EDate = "20191231"
 
     jobID = htTaxinvoiceService.requestJob(CorpNum, Type, DType, SDate, EDate, UserID)
 

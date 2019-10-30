@@ -33,7 +33,7 @@ try:
     UserID = testValue.testUserID
 
     # 수집요청(requestJob)시 발급받은 작업아이디
-    JobID = "019012911000000011"
+    JobID = "019103014000000001"
 
     # 문서형태 배열, N-일반전자세금계산서, M-수정전자세금계산서
     Type = ["N", "M"]
@@ -62,8 +62,11 @@ try:
     # 정렬방향 D-내림차순, A-오름차순
     Order = "D"
 
-    response = htTaxinvoiceService.search(CorpNum, JobID, Type, TaxType, PurposeType,
-                                          TaxRegIDType, TaxRegIDYN, TaxRegID, Page, PerPage, Order, UserID)
+    # 조회 검색어, 거래처 사업자번호 또는 거래처명 like 검색
+    SearchString = ""
+
+    response = htTaxinvoiceService.search(CorpNum, JobID, Type, TaxType, PurposeType, TaxRegIDType,
+                                    TaxRegIDYN, TaxRegID, Page, PerPage, Order, UserID, SearchString)
 
     print("code (응답코드) : %s " % response.code)
     print("message (응답메시지) : %s " % response.message)
