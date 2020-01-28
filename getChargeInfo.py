@@ -19,6 +19,7 @@ htTaxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 연동회원의 홈택스 전자세금계산서 API 연동서비스 과금정보를 확인합니다.
+- https://docs.popbill.com/httaxinvoice/python/api#GetChargeInfo
 '''
 
 try:

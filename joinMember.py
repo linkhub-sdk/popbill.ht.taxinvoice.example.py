@@ -19,6 +19,7 @@ htTaxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 팝빌 연동회원 가입을 요청합니다.
+- https://docs.popbill.com/httaxinvoice/python/api#JoinMember
 '''
 
 try:

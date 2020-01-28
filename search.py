@@ -19,8 +19,7 @@ htTaxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 검색조건을 사용하여 수집결과를 조회합니다.
-- 응답항목에 관한 정보는 "[홈택스연동(전자세금계산서) API 연동매뉴얼]
-  > 3.2.1. Search (수집 결과 조회)" 을 참고하시기 바랍니다.
+- https://docs.popbill.com/httaxinvoice/python/api#Search
 '''
 
 try:

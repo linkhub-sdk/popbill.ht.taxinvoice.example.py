@@ -19,6 +19,7 @@ htTaxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 홈택스 전자세금계산서 부서사용자 계정을 등록합니다.
+- https://docs.popbill.com/httaxinvoice/python/api#RegistDeptUser
 '''
 
 try:

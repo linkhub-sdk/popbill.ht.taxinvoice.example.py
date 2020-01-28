@@ -19,6 +19,7 @@ htTaxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 연동회원의 회사정보를 확인합니다.
+- https://docs.popbill.com/httaxinvoice/python/api#GetCorpInfo
 '''
 
 try:

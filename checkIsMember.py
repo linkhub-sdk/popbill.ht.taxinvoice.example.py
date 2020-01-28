@@ -19,6 +19,7 @@ htTaxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 해당 사업자의 파트너 연동회원 가입여부를 확인합니다.
+- https://docs.popbill.com/httaxinvoice/python/api#CheckIsMember
 '''
 
 try:

@@ -19,8 +19,7 @@ htTaxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 수집된 전자(세금)계산서 1건의 상세정보를 확인합니다.
-- 응답항목에 관한 정보는 "[홈택스연동(전자세금계산서) API 연동매뉴얼]
-  > 4.1.2. GetTaxinvoice 응답전문 구성" 을 참고하시기 바랍니다.
+- https://docs.popbill.com/httaxinvoice/python/api#GetTaxinvoice
 '''
 
 try:

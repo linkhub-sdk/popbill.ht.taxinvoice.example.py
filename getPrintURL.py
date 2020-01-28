@@ -20,6 +20,7 @@ htTaxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 '''
 홈택스 전자세금계산서 인쇄 팝업 URL을 반환합니다.
 - 보안정책에 따라 반환된 URL은 30초의 유효시간을 갖습니다.
+- https://docs.popbill.com/httaxinvoice/python/api#GetPrintURL
 '''
 
 try:
