@@ -16,6 +16,7 @@ from popbill import HTTaxinvoiceService, PopbillException
 htTaxinvoiceService = HTTaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 htTaxinvoiceService.IsTest = testValue.IsTest
 htTaxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
+htTaxinvoiceService.UseStaticIP = testValue.UseStaticIP
 
 '''
 연동회원의 회사정보를 확인합니다.

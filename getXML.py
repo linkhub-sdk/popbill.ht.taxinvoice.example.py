@@ -13,6 +13,7 @@ from popbill import HTTaxinvoiceService, PopbillException
 htTaxinvoiceService = HTTaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 htTaxinvoiceService.IsTest = testValue.IsTest
 htTaxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
+htTaxinvoiceService.UseStaticIP = testValue.UseStaticIP
 
 '''
 XML형식의 전자(세금)계산서 상세정보를 1건을 확인합니다.

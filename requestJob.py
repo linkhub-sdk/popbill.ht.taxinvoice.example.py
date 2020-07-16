@@ -13,6 +13,7 @@ from popbill import HTTaxinvoiceService, PopbillException
 htTaxinvoiceService = HTTaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 htTaxinvoiceService.IsTest = testValue.IsTest
 htTaxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
+htTaxinvoiceService.UseStaticIP = testValue.UseStaticIP
 
 '''
 전자(세금)계산서 매출/매입 내역 수집을 요청합니다

@@ -16,6 +16,7 @@ from popbill import HTTaxinvoiceService, PopbillException
 htTaxinvoiceService = HTTaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 htTaxinvoiceService.IsTest = testValue.IsTest
 htTaxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
+htTaxinvoiceService.UseStaticIP = testValue.UseStaticIP
 
 '''
 팝빌에 등록된 전자세금계산서 부서사용자 계정정보를 이용하여 홈택스 로그인을 테스트합니다.
