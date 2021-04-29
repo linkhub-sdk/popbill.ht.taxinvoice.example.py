@@ -17,6 +17,7 @@ htTaxinvoiceService = HTTaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 htTaxinvoiceService.IsTest = testValue.IsTest
 htTaxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 htTaxinvoiceService.UseStaticIP = testValue.UseStaticIP
+htTaxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 연동회원의 정액제 서비스 이용상태를 확인합니다.

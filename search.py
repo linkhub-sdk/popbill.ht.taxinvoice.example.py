@@ -17,6 +17,7 @@ htTaxinvoiceService = HTTaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 htTaxinvoiceService.IsTest = testValue.IsTest
 htTaxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 htTaxinvoiceService.UseStaticIP = testValue.UseStaticIP
+htTaxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 검색조건을 사용하여 수집결과를 조회합니다.
@@ -124,6 +125,7 @@ try:
         print("trusteeTaxRegID (수탁자 종사업장번호) : %s" % info.trusteeTaxRegID)
         print("trusteeCorpName (수탁자 상호) : %s" % info.trusteeCorpName)
         print("trusteeCEOName (수탁자 대표자 성명) : %s" % info.trusteeCEOName)
-        print("trusteeEmail (수탁자 담당자 이메일) : %s" % info.trusteeEmail) + '\n'
+        print("trusteeEmail (수탁자 담당자 이메일) : %s" % info.trusteeEmail)
+        print("*" * 50)
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code, PE.message))
