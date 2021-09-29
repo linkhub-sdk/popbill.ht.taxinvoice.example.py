@@ -17,7 +17,7 @@ htTaxinvoiceService.UseStaticIP = testValue.UseStaticIP
 htTaxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-전자(세금)계산서 매출/매입 내역 수집을 요청합니다
+전자(세금)계산서 매출/매입 내역 수집을 요청합니다. (조회기간 단위 : 최대 3개월)
 - 수집 요청후 반환받은 작업아이디(JobID)의 유효시간은 1시간 입니다.
 - https://docs.popbill.com/httaxinvoice/python/api#RequestJob
 '''
