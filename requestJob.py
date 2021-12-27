@@ -38,10 +38,10 @@ try:
     DType = "S"
 
     # 시작일자, 날짜형식(yyyyMMdd)
-    SDate = "20190901"
+    SDate = "20211201"
 
     # 종료일자, 날짜형식(yyyyMMdd)
-    EDate = "20191231"
+    EDate = "20211230"
 
     jobID = htTaxinvoiceService.requestJob(CorpNum, Type, DType, SDate, EDate, UserID)
 
