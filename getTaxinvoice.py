@@ -63,7 +63,7 @@ try:
 
     print("\n공급자 정보>")
     print("invoicerCorpNum (공급자 사업자번호) : %s" % taxinvoice.invoicerCorpNum)
-    print("invoicerMgtKey (공급자 문서관리번호) : %s" % taxinvoice.invoicerMgtKey)
+    print("invoicerMgtKey (공급자 문서번호) : %s" % taxinvoice.invoicerMgtKey)
     print("invoicerTaxRegID (공급자 종사업장번호) : %s" % taxinvoice.invoicerTaxRegID)
     print("invoicerCorpName (공급자 상호) : %s" % taxinvoice.invoicerCorpName)
     print("invoicerCEOName (공급자 대표자명) : %s" % taxinvoice.invoicerCEOName)
@@ -78,7 +78,7 @@ try:
     print("\n공급받는자 정보>")
     print("invoiceeCorpNum (공급받는자 사업자번호) : %s" % taxinvoice.invoiceeCorpNum)
     print("invoiceeType (공급받는자 구분) : %s" % taxinvoice.invoiceeType)
-    print("invoiceeMgtKey (공급받는자 문서관리번호) : %s" % taxinvoice.invoiceeMgtKey)
+    print("invoiceeMgtKey (공급받는자 문서번호) : %s" % taxinvoice.invoiceeMgtKey)
     print("invoiceeTaxRegID (공급받는자 종사업장번호) : %s" % taxinvoice.invoiceeTaxRegID)
     print("invoiceeCorpName (공급받는자 상호) : %s" % taxinvoice.invoiceeCorpName)
     print("invoiceeCEOName (공급받는자 대표자명) : %s" % taxinvoice.invoiceeCEOName)
@@ -92,7 +92,7 @@ try:
 
     print("\n수탁자 정보>")
     print("trusteeCorpNum (수탁자 사업자번호) : %s" % taxinvoice.trusteeCorpNum)
-    print("trusteeMgtKey (수탁자 문서관리번호) : %s" % taxinvoice.trusteeMgtKey)
+    print("trusteeMgtKey (수탁자 문서번호) : %s" % taxinvoice.trusteeMgtKey)
     print("trusteeTaxRegID (수탁자 종사업장번호) : %s" % taxinvoice.trusteeTaxRegID)
     print("trusteeCorpName (수탁자 상호) : %s" % taxinvoice.trusteeCorpName)
     print("trusteeCEOName (수탁자 대표자명) : %s" % taxinvoice.trusteeCEOName)
