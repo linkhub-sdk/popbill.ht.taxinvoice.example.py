@@ -31,7 +31,10 @@ try:
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 
-    url = htTaxinvoiceService.getCertificatePopUpURL(CorpNum)
+    # 팝빌회원 아이디
+    UserID = testValue.testUserID
+
+    url = htTaxinvoiceService.getCertificatePopUpURL(CorpNum, UserID)
 
     print("URL : %s" % url)
 

@@ -36,13 +36,10 @@ try:
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
     # 수집요청(requestJob) 호출시 발급받은 작업아이디
     jobID = "019012912000000003"
 
-    response = htTaxinvoiceService.getJobState(CorpNum, jobID, UserID)
+    response = htTaxinvoiceService.getJobState(CorpNum, jobID)
 
     print("jobID (작업아이디) : %s" % response.jobID)
     print("jobState (수집상태) : %s" % response.jobState)

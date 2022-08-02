@@ -27,13 +27,10 @@ try:
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
     # 전자세금계산서 국세청승인번호
     NTSConfirmNum = "20161121410002030000079e"
 
-    response = htTaxinvoiceService.getXML(CorpNum, NTSConfirmNum, UserID)
+    response = htTaxinvoiceService.getXML(CorpNum, NTSConfirmNum)
 
     print("ResultCode (요청에 대한 응답 상태코드) : %s " % response.ResultCode)
     print("Message (전자세금계산서 국세청승인번호) : %s " % response.Message)

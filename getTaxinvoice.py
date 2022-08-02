@@ -30,13 +30,10 @@ try:
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
     # 전자세금계산서 국세청승인번호
     NTSConfirmNum = "201812264100020300002e07"
 
-    taxinvoice = htTaxinvoiceService.getTaxinvoice(CorpNum, NTSConfirmNum, UserID)
+    taxinvoice = htTaxinvoiceService.getTaxinvoice(CorpNum, NTSConfirmNum)
 
     print("\n전자세금계산서 정보>")
     print("writeDate (작성일자) : %s" % taxinvoice.writeDate)

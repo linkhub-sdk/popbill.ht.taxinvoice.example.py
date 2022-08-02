@@ -28,9 +28,6 @@ try:
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
     # 전자세금계산서  발행유형, SELL-매출, BUY-매입, TRUSTEE-위수탁
     Type = "SELL"
 
@@ -43,7 +40,7 @@ try:
     # 종료일자, 날짜형식(yyyyMMdd)
     EDate = "20220731"
 
-    jobID = htTaxinvoiceService.requestJob(CorpNum, Type, DType, SDate, EDate, UserID)
+    jobID = htTaxinvoiceService.requestJob(CorpNum, Type, DType, SDate, EDate)
 
     print("작업아이디(jobID) : " + jobID)
 

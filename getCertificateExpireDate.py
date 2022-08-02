@@ -30,10 +30,7 @@ try:
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
-    expireDate = htTaxinvoiceService.getCertificateExpireDate(CorpNum, UserID)
+    expireDate = htTaxinvoiceService.getCertificateExpireDate(CorpNum)
 
     print("공인인증서 만료일시 : %s" % expireDate)
 

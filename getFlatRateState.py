@@ -30,10 +30,7 @@ try:
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
-    response = htTaxinvoiceService.getFlatRateState(CorpNum, UserID)
+    response = htTaxinvoiceService.getFlatRateState(CorpNum)
 
     print("referenceID (사업자번호) : %s" % response.referenceID)
     print("contractDT (정액제 서비스 시작일시) : %s" % response.contractDT)

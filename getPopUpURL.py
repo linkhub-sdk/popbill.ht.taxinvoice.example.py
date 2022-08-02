@@ -34,7 +34,10 @@ try:
     # 국세청 승인번호
     NTSConfirmNum = "201809194100020300000cd5"
 
-    url = htTaxinvoiceService.getPopUpURL(CorpNum, NTSConfirmNum)
+    # 팝빌회원 아이디
+    UserID = testValue.testUserID
+
+    url = htTaxinvoiceService.getPopUpURL(CorpNum, NTSConfirmNum, UserID)
 
     print("URL : %s" % url)
 

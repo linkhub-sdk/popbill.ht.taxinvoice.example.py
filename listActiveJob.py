@@ -31,10 +31,7 @@ try:
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
-    response = htTaxinvoiceService.listActiveJob(CorpNum, UserID)
+    response = htTaxinvoiceService.listActiveJob(CorpNum)
 
     listLength = str(len(response))
 
