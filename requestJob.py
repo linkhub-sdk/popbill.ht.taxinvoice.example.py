@@ -17,8 +17,8 @@ htTaxinvoiceService.UseStaticIP = testValue.UseStaticIP
 htTaxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-전자(세금)계산서 매출/매입 내역 수집을 요청합니다. (조회기간 단위 : 최대 3개월)
-- 수집 요청후 반환받은 작업아이디(JobID)의 유효시간은 1시간 입니다.
+홈택스에 신고된 전자세금계산서 매입/매출 내역 수집을 팝빌에 요청합니다. (조회기간 단위 : 최대 3개월)
+- 주기적으로 자체 DB에 세금계산서 정보를 INSERT 하는 경우, 조회할 일자 유형(DType) 값을 "S"로 하는 것을 권장합니다.
 - https://docs.popbill.com/httaxinvoice/python/api#RequestJob
 '''
 
@@ -38,10 +38,10 @@ try:
     DType = "S"
 
     # 시작일자, 날짜형식(yyyyMMdd)
-    SDate = "20211201"
+    SDate = "20220701"
 
     # 종료일자, 날짜형식(yyyyMMdd)
-    EDate = "20211230"
+    EDate = "20220731"
 
     jobID = htTaxinvoiceService.requestJob(CorpNum, Type, DType, SDate, EDate, UserID)
 

@@ -20,7 +20,7 @@ htTaxinvoiceService.UseStaticIP = testValue.UseStaticIP
 htTaxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-팝빌 회원아이디 중복여부를 확인합니다.
+사용하고자 하는 아이디의 중복여부를 확인합니다.
 - https://docs.popbill.com/httaxinvoice/python/api#CheckID
 '''
 

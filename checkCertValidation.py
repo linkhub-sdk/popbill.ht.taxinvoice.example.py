@@ -20,7 +20,7 @@ htTaxinvoiceService.UseStaticIP = testValue.UseStaticIP
 htTaxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-팝빌에 등록된 공인인증서의 홈택스 로그인을 테스트합니다.
+팝빌에 등록된 인증서로 홈택스 로그인 가능 여부를 확인합니다.
 - https://docs.popbill.com/httaxinvoice/python/api#CheckCertValidation
 '''
 

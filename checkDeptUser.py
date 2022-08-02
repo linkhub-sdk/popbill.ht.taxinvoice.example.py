@@ -20,7 +20,7 @@ htTaxinvoiceService.UseStaticIP = testValue.UseStaticIP
 htTaxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-팝빌에 등록된 전자세금계산서 부서사용자 아이디를 확인합니다.
+홈택스연동 인증을 위해 팝빌에 등록된 전자세금계산서용 부서사용자 계정을 확인합니다.
 - https://docs.popbill.com/httaxinvoice/python/api#CheckDeptUser
 '''
 

@@ -20,7 +20,7 @@ htTaxinvoiceService.UseStaticIP = testValue.UseStaticIP
 htTaxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-연동회원의 홈택스 전자세금계산서 API 연동서비스 과금정보를 확인합니다.
+팝빌 홈택스연동(세금) API 서비스 과금정보를 확인합니다.
 - https://docs.popbill.com/httaxinvoice/python/api#GetChargeInfo
 '''
 
