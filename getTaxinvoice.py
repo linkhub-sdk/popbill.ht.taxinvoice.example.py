@@ -99,7 +99,7 @@ try:
     print("trusteeContactName (수탁자 담당자명) : %s" % taxinvoice.trusteeContactName)
     print("trusteeTEL (수탁자 담당자 연락처) : %s" % taxinvoice.trusteeTEL)
     print("trusteeHP (수탁자 담당자 휴대폰) : %s" % taxinvoice.trusteeHP)
-    print("trusteeEmail (수탁자 담당자 메일) : %s" % taxinvoice.trusteeEmail) + '\n'
+    print("trusteeEmail (수탁자 담당자 메일) : %s" % taxinvoice.trusteeEmail + '\n')
 
     print("=" * 15 + "상세항목(품목) 정보" + "=" * 15)
     if taxinvoice.detailList is not None:

@@ -34,7 +34,7 @@ try:
     UserID = testValue.testUserID
 
     # 수집 요청(requestJob)시 발급받은 작업아이디
-    JobID = "019103014000000001"
+    JobID = "022080216000000005"
 
     # 문서형태 배열 ("N" 와 "M" 중 선택, 다중 선택 가능)
     # └ N = 일반 , M = 수정

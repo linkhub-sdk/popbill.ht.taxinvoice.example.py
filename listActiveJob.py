@@ -47,7 +47,7 @@ try:
         print("jobStartDT (작업 시작일시) : %s" % info.jobStartDT)
         print("jobEndDT (작업 종료일시) : %s" % info.jobEndDT)
         print("collectCount (수집개수) : %s" % info.collectCount)
-        print("regDT (수집 요청일시) : %s" % info.regDT) + '\n'
+        print("regDT (수집 요청일시) : %s" % info.regDT + '\n')
 
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code, PE.message))
