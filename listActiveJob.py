@@ -22,7 +22,7 @@ htTaxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 '''
 전자세금계산서 매입/매출 내역 수집요청에 대한 상태 목록을 확인합니다.
 - 수집 요청 후 1시간이 경과한 수집 요청건은 상태정보가 반환되지 않습니다.
-- https://docs.popbill.com/httaxinvoice/python/api#ListActiveJob
+- https://developers.popbill.com/reference/httaxinvoice/python/api/job#ListActiveJob
 '''
 
 try:

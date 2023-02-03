@@ -18,7 +18,7 @@ htTaxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 국세청 승인번호를 통해 수집한 전자세금계산서 1건의 상세정보를 XML 형태의 문자열로 반환합니다.
-- https://docs.popbill.com/httaxinvoice/python/api#GetXML
+- https://developers.popbill.com/reference/httaxinvoice/python/api/search#GetXML
 '''
 
 try:

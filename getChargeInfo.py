@@ -21,7 +21,7 @@ htTaxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 팝빌 홈택스연동(세금) API 서비스 과금정보를 확인합니다.
-- https://docs.popbill.com/httaxinvoice/python/api#GetChargeInfo
+- https://developers.popbill.com/reference/httaxinvoice/python/api/point#GetChargeInfo
 '''
 
 try:

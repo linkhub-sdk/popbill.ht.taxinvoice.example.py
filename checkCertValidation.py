@@ -21,7 +21,7 @@ htTaxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 팝빌에 등록된 인증서로 홈택스 로그인 가능 여부를 확인합니다.
-- https://docs.popbill.com/httaxinvoice/python/api#CheckCertValidation
+- https://developers.popbill.com/reference/httaxinvoice/python/api/cert#CheckCertValidation
 '''
 
 try:
