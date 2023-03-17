@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # code for console Encoding difference. Dont' mind on it
-import sys
 import imp
+import sys
 
 imp.reload(sys)
 try:
@@ -10,8 +10,7 @@ except Exception as E:
     pass
 
 import testValue
-
-from popbill import JoinForm, HTTaxinvoiceService, PopbillException
+from popbill import HTTaxinvoiceService, JoinForm, PopbillException
 
 htTaxinvoiceService = HTTaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 htTaxinvoiceService.IsTest = testValue.IsTest
