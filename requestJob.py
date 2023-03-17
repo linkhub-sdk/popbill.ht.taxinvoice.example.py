@@ -2,9 +2,12 @@
 # code for console Encoding difference. Dont' mind on it
 import sys
 import imp
+
 imp.reload(sys)
-try: sys.setdefaultencoding('UTF8')
-except Exception as E: pass
+try:
+    sys.setdefaultencoding("UTF8")
+except Exception as E:
+    pass
 
 import testValue
 
@@ -16,11 +19,11 @@ htTaxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 htTaxinvoiceService.UseStaticIP = testValue.UseStaticIP
 htTaxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 홈택스에 신고된 전자세금계산서 매입/매출 내역 수집을 팝빌에 요청합니다. (조회기간 단위 : 최대 3개월)
 - 주기적으로 자체 DB에 세금계산서 정보를 INSERT 하는 경우, 조회할 일자 유형(DType) 값을 "S"로 하는 것을 권장합니다.
 - https://developers.popbill.com/reference/httaxinvoice/python/api/job#RequestJob
-'''
+"""
 
 try:
     print("=" * 15 + " 수집 요청 " + "=" * 15)
@@ -45,4 +48,4 @@ try:
     print("작업아이디(jobID) : " + jobID)
 
 except PopbillException as PE:
-    print("Exception Occur : [%d] %s" % (PE.code , PE.message))
+    print("Exception Occur : [%d] %s" % (PE.code, PE.message))

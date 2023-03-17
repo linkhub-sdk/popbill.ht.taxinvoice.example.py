@@ -2,9 +2,12 @@
 # code for console Encoding difference. Dont' mind on it
 import sys
 import imp
+
 imp.reload(sys)
-try: sys.setdefaultencoding('UTF8')
-except Exception as E: pass
+try:
+    sys.setdefaultencoding("UTF8")
+except Exception as E:
+    pass
 
 import testValue
 
@@ -16,10 +19,10 @@ htTaxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 htTaxinvoiceService.UseStaticIP = testValue.UseStaticIP
 htTaxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 국세청 승인번호를 통해 수집한 전자세금계산서 1건의 상세정보를 XML 형태의 문자열로 반환합니다.
 - https://developers.popbill.com/reference/httaxinvoice/python/api/search#GetXML
-'''
+"""
 
 try:
     print("=" * 15 + " 세금계산서 상세정보 확인 - XML " + "=" * 15)
@@ -37,4 +40,4 @@ try:
     print("retObject (전자세금계산서 XML문서) : %s " % response.retObject)
 
 except PopbillException as PE:
-    print("Exception Occur : [%d] %s" % (PE.code , PE.message))
+    print("Exception Occur : [%d] %s" % (PE.code, PE.message))

@@ -5,7 +5,7 @@ import imp
 
 imp.reload(sys)
 try:
-    sys.setdefaultencoding('UTF8')
+    sys.setdefaultencoding("UTF8")
 except Exception as E:
     pass
 
@@ -19,10 +19,10 @@ htTaxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 htTaxinvoiceService.UseStaticIP = testValue.UseStaticIP
 htTaxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 팝빌에 등록된 전자세금계산서 부서사용자 계정정보를 이용하여 홈택스 로그인을 테스트합니다.
 - https://developers.popbill.com/reference/httaxinvoice/python/api/cert#CheckLoginDeptUser
-'''
+"""
 
 try:
     print("=" * 15 + " 부서사용자 로그인 테스트 " + "=" * 15)

@@ -5,7 +5,7 @@ import imp
 
 imp.reload(sys)
 try:
-    sys.setdefaultencoding('UTF8')
+    sys.setdefaultencoding("UTF8")
 except Exception as E:
     pass
 
@@ -19,11 +19,11 @@ htTaxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 htTaxinvoiceService.UseStaticIP = testValue.UseStaticIP
 htTaxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 전자세금계산서 매입/매출 내역 수집요청에 대한 상태 목록을 확인합니다.
 - 수집 요청 후 1시간이 경과한 수집 요청건은 상태정보가 반환되지 않습니다.
 - https://developers.popbill.com/reference/httaxinvoice/python/api/job#ListActiveJob
-'''
+"""
 
 try:
     print("=" * 15 + " 수집 상태 목록 확인 " + "=" * 15 + "\n")
@@ -47,7 +47,7 @@ try:
         print("jobStartDT (작업 시작일시) : %s" % info.jobStartDT)
         print("jobEndDT (작업 종료일시) : %s" % info.jobEndDT)
         print("collectCount (수집개수) : %s" % info.collectCount)
-        print("regDT (수집 요청일시) : %s" % info.regDT + '\n')
+        print("regDT (수집 요청일시) : %s" % info.regDT + "\n")
 
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code, PE.message))

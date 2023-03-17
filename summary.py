@@ -5,7 +5,7 @@ import imp
 
 imp.reload(sys)
 try:
-    sys.setdefaultencoding('UTF8')
+    sys.setdefaultencoding("UTF8")
 except Exception as E:
     pass
 
@@ -19,11 +19,11 @@ htTaxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 htTaxinvoiceService.UseStaticIP = testValue.UseStaticIP
 htTaxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 수집 상태 확인(GetJobState API) 함수를 통해 상태 정보가 확인된 작업아이디를 활용하여 수집된 현금영수증 매입/매출 내역의 요약 정보를 조회합니다.
 - 요약 정보 : 현금영수증 수집 건수, 공급가액 합계, 세액 합계, 봉사료 합계, 합계 금액
 - https://developers.popbill.com/reference/httaxinvoice/python/api/search#Summary
-'''
+"""
 
 try:
     print("=" * 15 + "수집 결과 요약정보 조회 " + "=" * 15)
@@ -71,8 +71,18 @@ try:
     # - 미입력시 전체조회
     SearchString = ""
 
-    response = htTaxinvoiceService.summary(CorpNum, JobID, Type, TaxType, PurposeType,
-                                           TaxRegIDType, TaxRegIDYN, TaxRegID, UserID, SearchString)
+    response = htTaxinvoiceService.summary(
+        CorpNum,
+        JobID,
+        Type,
+        TaxType,
+        PurposeType,
+        TaxRegIDType,
+        TaxRegIDYN,
+        TaxRegID,
+        UserID,
+        SearchString,
+    )
 
     print("count (수집 결과 건수) : %s " % response.count)
     print("supplyCostTotal (공급가액 합계) : %s " % response.supplyCostTotal)

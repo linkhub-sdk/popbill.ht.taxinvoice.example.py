@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-'''
+"""
 팝빌 홈택스 전자세금계산서 연계 API Python SDK Example
 
 - Python SDK 연동환경 설정방법 안내 : https://developers.popbill.com/guide/httaxinvoice/python/getting-started/tutorial
@@ -16,13 +16,13 @@
       [홈택스 공인인증서 등록]을 통해 인증정보를 등록합니다.
     - 홈택스연동 인증 관리 팝업 URL(GetCertificatePopUpURL API) 반환된 URL에 접속 하여
       [홈택스 부서사용자 등록] 혹은 [홈택스 공인인증서 등록]을 통해 인증정보를 등록합니다.
-'''
+"""
 
 # 링크아이디
-LinkID = 'TESTER'
+LinkID = "TESTER"
 
 # 비밀키
-SecretKey = 'SwWxqU+0TErBXy/9TVjIPEnI0VTUMMSQZtJf3Ed8q3I='
+SecretKey = "SwWxqU+0TErBXy/9TVjIPEnI0VTUMMSQZtJf3Ed8q3I="
 
 # 연동환경 설정값, 개발용(True), 상업용(False)
 IsTest = True
@@ -39,5 +39,5 @@ IPRestrictOnOff = True
 # 팝빌 API 서비스 고정 IP 사용여부, true-사용, false-미사용, 기본값(false)
 UseStaticIP = False
 
-#로컬시스템 시간 사용여부, 권장(True)
+# 로컬시스템 시간 사용여부, 권장(True)
 UseLocalTimeYN = True

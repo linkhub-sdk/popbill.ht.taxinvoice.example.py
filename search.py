@@ -5,7 +5,7 @@ import imp
 
 imp.reload(sys)
 try:
-    sys.setdefaultencoding('UTF8')
+    sys.setdefaultencoding("UTF8")
 except Exception as E:
     pass
 
@@ -19,10 +19,10 @@ htTaxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 htTaxinvoiceService.UseStaticIP = testValue.UseStaticIP
 htTaxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 수집 상태 확인(GetJobState API) 함수를 통해 상태 정보 확인된 작업아이디를 활용하여 현금영수증 매입/매출 내역을 조회합니다.
 - https://developers.popbill.com/reference/httaxinvoice/python/api/search#Search
-'''
+"""
 
 try:
     print("=" * 15 + " 수집 결과 조회 " + "=" * 15)
@@ -79,8 +79,21 @@ try:
     # - 미입력시 전체조회
     SearchString = ""
 
-    response = htTaxinvoiceService.search(CorpNum, JobID, Type, TaxType, PurposeType, TaxRegIDType,
-                                    TaxRegIDYN, TaxRegID, Page, PerPage, Order, UserID, SearchString)
+    response = htTaxinvoiceService.search(
+        CorpNum,
+        JobID,
+        Type,
+        TaxType,
+        PurposeType,
+        TaxRegIDType,
+        TaxRegIDYN,
+        TaxRegID,
+        Page,
+        PerPage,
+        Order,
+        UserID,
+        SearchString,
+    )
 
     print("code (응답코드) : %s " % response.code)
     print("message (응답메시지) : %s " % response.message)

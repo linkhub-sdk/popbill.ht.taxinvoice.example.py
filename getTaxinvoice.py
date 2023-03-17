@@ -5,7 +5,7 @@ import imp
 
 imp.reload(sys)
 try:
-    sys.setdefaultencoding('UTF8')
+    sys.setdefaultencoding("UTF8")
 except Exception as E:
     pass
 
@@ -19,10 +19,10 @@ htTaxinvoiceService.IPRestrictOnOff = testValue.IPRestrictOnOff
 htTaxinvoiceService.UseStaticIP = testValue.UseStaticIP
 htTaxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 국세청 승인번호를 통해 수집한 전자세금계산서 1건의 상세정보를 반환합니다.
 - https://developers.popbill.com/reference/httaxinvoice/python/api/search#GetTaxinvoice
-'''
+"""
 
 try:
     print("=" * 15 + " 세금계산서 상세정보 확인 " + "=" * 15)
@@ -99,7 +99,7 @@ try:
     print("trusteeContactName (수탁자 담당자명) : %s" % taxinvoice.trusteeContactName)
     print("trusteeTEL (수탁자 담당자 연락처) : %s" % taxinvoice.trusteeTEL)
     print("trusteeHP (수탁자 담당자 휴대폰) : %s" % taxinvoice.trusteeHP)
-    print("trusteeEmail (수탁자 담당자 메일) : %s" % taxinvoice.trusteeEmail + '\n')
+    print("trusteeEmail (수탁자 담당자 메일) : %s" % taxinvoice.trusteeEmail + "\n")
 
     print("=" * 15 + "상세항목(품목) 정보" + "=" * 15)
     if taxinvoice.detailList is not None:
