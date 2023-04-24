@@ -10,7 +10,7 @@ except Exception as E:
     pass
 
 import testValue
-from popbill import HTTaxinvoiceService, PaymentForm, PopbillException
+from popbill import HTTaxinvoiceService, PopbillException
 
 htTaxinvoiceService = HTTaxinvoiceService(testValue.LinkID, testValue.SecretKey)
 htTaxinvoiceService.IsTest = testValue.IsTest
