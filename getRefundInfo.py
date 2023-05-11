@@ -19,7 +19,7 @@ htTaxinvoiceService.UseStaticIP = testValue.UseStaticIP
 htTaxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 """
- * 포인트 환불에 대한 상세정보 1건을 확인합니다.
+포인트 환불에 대한 상세정보 1건을 확인합니다.
 - https://developers.popbill.com/reference/httaxinvoice/python/api/point#GetRefundInfo
 """
 
