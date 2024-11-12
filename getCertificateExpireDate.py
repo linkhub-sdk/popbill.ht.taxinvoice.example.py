@@ -24,7 +24,7 @@ htTaxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 """
 
 try:
-    print("=" * 15 + " 홈택스 공인인증서 만료일시 확인 " + "=" * 15)
+    print("=" * 15 + " 홈택스수집 공인인증서 만료일시 확인 " + "=" * 15)
 
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum

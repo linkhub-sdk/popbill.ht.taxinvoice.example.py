@@ -25,7 +25,7 @@ htTaxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 """
 
 try:
-    print("=" * 15 + " 홈택스 전자세금계산서 인쇄 팝업 URL " + "=" * 15)
+    print("=" * 15 + " 홈택스수집 전자세금계산서 인쇄 팝업 URL " + "=" * 15)
 
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
