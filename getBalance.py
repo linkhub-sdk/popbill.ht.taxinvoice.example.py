@@ -20,7 +20,7 @@ htTaxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 """
 연동회원의 잔여포인트를 확인합니다.
-- https://developers.popbill.com/reference/httaxinvoice/python/api/point#GetBalance
+- https://developers.popbill.com/reference/httaxinvoice/python/common-api/point#GetBalance
 """
 
 try:
@@ -32,5 +32,6 @@ try:
     balance = htTaxinvoiceService.getBalance(CorpNum)
 
     print("잔여포인트 : %f" % balance)
+    
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code, PE.message))

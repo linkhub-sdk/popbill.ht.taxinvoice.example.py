@@ -103,7 +103,7 @@ try:
 
     for info in response.list:
         print("\n==============전자세금계산서 정보>==============")
-        print("ntsconfirmNum (국세청승인번호) : %s" % info.ntsconfirmNum)
+        print("ntsconfirmNum (전자세금계산서 국세청승인번호) : %s" % info.ntsconfirmNum)
         print("writeDate (작성일자) : %s" % info.writeDate)
         print("issueDate (발행일자) : %s" % info.issueDate)
         print("sendDate (전송일자) : %s" % info.sendDate)
@@ -113,7 +113,7 @@ try:
         print("taxTotal (세액 합계) : %s" % info.taxTotal)
         print("totalAmount (합계금액) : %s" % info.totalAmount)
         print("remark1 (비고) : %s" % info.remark1)
-        print("invoiceType (매입/매출) : %s" % info.invoiceType)
+        print("invoiceType (전자세금계산서 유형) : %s" % info.invoiceType)
 
         print("\n수정 전자세금계산서 정보>")
         print("modifyYN (수정 전자세금계산서 여부) : %s" % info.modifyYN)

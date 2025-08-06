@@ -37,15 +37,15 @@ try:
     for info in response:
         print("jobID (작업아이디) : %s" % info.jobID)
         print("jobState (수집상태) : %s" % info.jobState)
-        print("queryType (수집유형) : %s" % info.queryType)
+        print("queryType (전자세금계산서 유형) : %s" % info.queryType)
         print("queryDateType (일자유형) : %s" % info.queryDateType)
         print("queryStDate (시작일자) : %s" % info.queryStDate)
         print("queryEnDate (종료일자) : %s" % info.queryEnDate)
-        print("errorCode (오류코드) : %s" % info.errorCode)
+        print("errorCode (수집 결과코드) : %s" % info.errorCode)
         print("errorReason (오류메시지) : %s" % info.errorReason)
         print("jobStartDT (작업 시작일시) : %s" % info.jobStartDT)
         print("jobEndDT (작업 종료일시) : %s" % info.jobEndDT)
-        print("collectCount (수집개수) : %s" % info.collectCount)
+        print("collectCount (수집건수) : %s" % info.collectCount)
         print("regDT (수집 요청일시) : %s" % info.regDT + "\n")
 
 except PopbillException as PE:

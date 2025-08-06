@@ -20,7 +20,7 @@ htTaxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 """
 연동회원 사업자번호에 담당자(팝빌 로그인 계정)를 추가합니다.
-- https://developers.popbill.com/reference/httaxinvoice/python/api/member#RegistContact
+- https://developers.popbill.com/reference/httaxinvoice/python/common-api/member#RegistContact
 """
 
 try:
@@ -31,19 +31,24 @@ try:
 
     # 담당자 정보
     newContact = ContactInfo(
-        # 아이디 (6자 이상 50자 미만)
+
+        # 아이디
         id="popbill_test_id",
-        # 비밀번호 (8자 이상 20자 미만)
-        # 영문, 숫자, 특수문자 조합
+
+        # 비밀번호
         Password="password123!@#",
+
         # 담당자명 (최대 100자)
         personName="담당자명",
-        # 담당자 연락처 (최대 20자)
+
+        # 담당자 휴대폰 (최대 20자)
         tel="",
-        # 담당자 이메일 (최대 100자)
+
+        # 메일 (최대 100자)
         email="",
-        # 담당자 조회권한, 1(개인) 2(읽기) 3(회사)
-        searchRole=1,
+
+        # 권한, 1(개인) 2(읽기) 3(회사)
+        searchRole=3,
     )
 
     result = htTaxinvoiceService.registContact(CorpNum, newContact)

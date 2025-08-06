@@ -42,15 +42,15 @@ try:
 
     print("jobID (작업아이디) : %s" % response.jobID)
     print("jobState (수집상태) : %s" % response.jobState)
-    print("queryType (수집유형) : %s" % response.queryType)
-    print("queryDateType (수집 일자유형) : %s" % response.queryDateType)
+    print("queryType (전자세금계산서 유형) : %s" % response.queryType)
+    print("queryDateType (일자유형) : %s" % response.queryDateType)
     print("queryStDate (시작일자) : %s" % response.queryStDate)
     print("queryEnDate (종료일자) : %s" % response.queryEnDate)
-    print("errorCode (오류코드) : %s" % response.errorCode)
+    print("errorCode (수집 결과코드) : %s" % response.errorCode)
     print("errorReason (오류메시지) : %s" % response.errorReason)
     print("jobStartDT (작업 시작일시) : %s" % response.jobStartDT)
     print("jobEndDT (작업 종료일시) : %s" % response.jobEndDT)
-    print("collectCount (수집개수) : %s" % response.collectCount)
+    print("collectCount (수집건수) : %s" % response.collectCount)
     print("regDT (수집 요청일시) : %s" % response.regDT)
 
 except PopbillException as PE:

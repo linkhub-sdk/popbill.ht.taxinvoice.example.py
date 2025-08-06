@@ -20,7 +20,7 @@ htTaxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 """
 연동회원 포인트 충전을 위해 무통장입금을 신청합니다.
-- https://developers.popbill.com/reference/htcashbill/python/api/point#PaymentRequest
+- https://developers.popbill.com/reference/htcashbill/python/common-api/point#PaymentRequest
 """
 
 try:

@@ -83,7 +83,7 @@ try:
         SearchString,
     )
 
-    print("count (수집 결과 건수) : %s " % response.count)
+    print("count (수집 건수) : %s " % response.count)
     print("supplyCostTotal (공급가액 합계) : %s " % response.supplyCostTotal)
     print("taxTotal (세액 합계) : %s " % response.taxTotal)
     print("amountTotal (합계 금액) : %s " % response.amountTotal)
