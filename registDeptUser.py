@@ -19,7 +19,7 @@ htTaxinvoiceService.UseStaticIP = testValue.UseStaticIP
 htTaxinvoiceService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 """
-홈택스수집 인증을 위해 팝빌에 전자세금계산서용 부서사용자 계정을 등록합니다.
+팝빌에 전자세금계산서 전용 부서사용자를 등록합니다.
 - https://developers.popbill.com/reference/httaxinvoice/python/api/cert#RegistDeptUser
 """
 
@@ -29,13 +29,19 @@ try:
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 
-    # 홈택스 부서사용자 계정아이디
+    # 부서사용자 계정아이디
     DeptUserID = "deptuserid"
 
-    # 홈택스 부서사용자 계정비밀번호
+    # 부서사용자 계정비밀번호
     DeptUserPWD = "deptuserpwd"
 
-    result = htTaxinvoiceService.registDeptUser(CorpNum, DeptUserID, DeptUserPWD)
+    # 부서사용자 대표자 주민번호
+    IdentityNum = ""
+
+    # 팝빌회원 아이디
+    UserID = "testkorea"
+
+    result = htTaxinvoiceService.registDeptUser(CorpNum, DeptUserID, DeptUserPWD, IdentityNum, UserID)
 
     print("처리결과 : [%d] %s" % (result.code, result.message))
 

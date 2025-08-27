@@ -4,7 +4,7 @@
 팝빌 홈택스수집 전자세금계산서 API Python SDK Example
 
 Python 연동 튜토리얼 안내 : https://developers.popbill.com/guide/httaxinvoice/python/getting-started/tutorial
-업데이트 일자 : 2025-08-06
+업데이트 일자 : 2025-08-27
 연동 기술지원 연락처 : 1600-9854
 연동 기술지원 이메일 : code@linkhubcorp.com
 """
